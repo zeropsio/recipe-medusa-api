@@ -1,0 +1,18 @@
+api:
+  build:
+    base: [nodejs@14]
+    build:
+      - npm i --loglevel=error
+      - npm run build
+    deploy:
+      - '.'
+    cache: ['node_modules']
+  run:
+    prepare:
+      - apt-get update
+      - apt-get install -y python
+      - npm install -g @medusajs/medusa-cli@latest
+    init:
+      - medusa migrations run
+    start: npm start
+
