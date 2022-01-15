@@ -6,7 +6,7 @@ const STORE_CORS = process.env.STORE_CORS || "http://localhost:8000";
 
 // Database URL (here we use a local database called medusa-development)
 const DATABASE_URL =
-  process.env.DATABASE_URL || "postgres://localhost/medusa-store";
+  process.env.DB_URL || "postgresql://db:TRmLoh3vjQBBvFii@db:5432";
 
 // Medusa uses Redis, so this needs configuration as well
 const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
@@ -33,7 +33,7 @@ const plugins = [
 module.exports = {
   projectConfig: {
     redis_url: process.env.redis_connectionString,
-    database_url: process.env.DB_URL,
+    database_url: DATABASE_URL,
     database_type: "postgres",
     jwtSecret: process.env.JWT_SECRET,
     store_cors: STORE_CORS,
