@@ -35,6 +35,7 @@ module.exports = {
     redis_url: process.env.redis_connectionString,
     database_url: process.env.DB_URL,
     database_type: "postgres",
+    jwtSecret: process.env.JWT_SECRET,
     store_cors: STORE_CORS,
     admin_cors: ADMIN_CORS,
     database_extra: { ssl: { rejectUnauthorized: false } },
