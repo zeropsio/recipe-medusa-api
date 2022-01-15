@@ -33,7 +33,7 @@ const plugins = [
 module.exports = {
   projectConfig: {
     redis_url: process.env.redis_connectionString,
-    database_url: process.env.db_connectionString,
+    database_url: process.env.DB_URL,
     database_type: "postgres",
     store_cors: STORE_CORS,
     admin_cors: ADMIN_CORS,
